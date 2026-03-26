@@ -18,15 +18,17 @@ struct Token {
 
 vector<Token> tokenize(const string& line) {
     vector<Token> tokens;
-    string token = "";
+    string item = "";
     for (char c: line) {
         if (c == ' ') {
-            if (!token.empty()) {
-                tokens.push_back("[" + token + "]");
-                token = "";
+            if (!item.empty()) {
+                tokens.push_back(Token{"[" + item + "]"});
+                item = "";
             }
         }
-
+        if (!item.empty()) {
+            tokens.push_back(Token{"[" + item + "]"});
+        }
     }
     // TODO
     return tokens;
