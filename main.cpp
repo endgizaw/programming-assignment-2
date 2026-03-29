@@ -41,6 +41,12 @@ bool isOperator(const string& s) {
 }
 
 int precedence(const string& op) {
+    if (op == "*" || op == "/") {
+        return 1;
+    }
+    else if (op == "+" || op == "-") {
+        return 2;
+    }
     // TODO
     return 0;
 }
