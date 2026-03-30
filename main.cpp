@@ -54,8 +54,18 @@ int precedence(const string& op) {
 // Detection
 
 bool isValidPostfix(const vector<Token>& tokens) {
+    int count = 0;
+    for (int i = 0; i < tokens.size(); i++) {
+        if (precedence(tokens[i].value) == 0) {
+            count++;
+        } else {
+            return false;
+        }
+
+
+    }
     // TODO
-    return false;
+    return count;
 }
 
 bool isValidInfix(const vector<Token>& tokens) {
@@ -67,6 +77,19 @@ bool isValidInfix(const vector<Token>& tokens) {
 
 vector<Token> infixToPostfix(const vector<Token>& tokens) {
     vector<Token> output;
+    vector<Token> temp;
+
+    for (int i = 0; i < tokens.size(); i++) {
+        if (precedence(tokens[i].value == 0)){
+            temp.push_back(tokens[i]);
+        } else {
+            while (temp.size() > 0) {
+                output.push_back(tokens[i]);
+                temp.pop_back();
+            }
+        }
+    }
+
     // TODO
     return output;
 }
