@@ -65,7 +65,7 @@ Each entry may be one of the following:
 **Task worked on: evalPostfix() **  
 **Issue or decision: when dividing was not checking if dividen was 0**  
 **Error message / symptom (if applicable): would divide then check if dividen was 0**  
-**What I tried: x/y then if y == 0 return false**  
+**What I tried: x/y then if y == 0 return 0.0**  
 **Fix / resolution (or final decision): put check before division**  
 **Commit(s): **
 
