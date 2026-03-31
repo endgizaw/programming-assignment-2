@@ -74,14 +74,21 @@ bool isValidInfix(const vector<Token>& tokens) {
         return false;
     }
     for (int i = 0; i < tokens.size(); i++) {
-        bool isOperator = precedence(tokens[i].value) > 0;
-    }
-    if (isOperator) {
-
+        if (precedence(tokens[i].value) > 0) {
+            if (i == 0 || i == tokens.size() - 1) {
+                return false;
+            }
+            if (precedence(tokens[i - 1].value) == 0) {
+                return false;
+            }
+            if (precedence(tokens[i + 1].value) == 0) {
+                return false;
+            }
+        }
     }
 
     // TODO
-    return false;
+    return true;
 }
 
 // Conversion
