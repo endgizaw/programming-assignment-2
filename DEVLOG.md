@@ -39,10 +39,10 @@ Each entry may be one of the following:
 **Date:** 2026-03-30  
 **Entry Type:**  Engineering Decision  
 **Task worked on: precedence()**  
-**Issue or decision: was using an else if statement, decided to switch to two if statements**  
+**Issue or decision: was using an else if statement, was returning wrong values based on type of operator**  
 **Error message / symptom (if applicable):**  
-**What I tried: had a else-if statement to dictate the output of precedence()**  
-**Fix / resolution (or final decision): decided to just make precedence() with two seperate if statemnts**  
+**What I tried: had a else-if statement to dictate the output of precedence(), had wrong logic for return values**  
+**Fix / resolution (or final decision): decided to just make precedence() with two seperate if statemnts, corrected return values of for "*" and "/" to be greater than "+" and "-"**  
 **Commit(s): **
 
 ---
