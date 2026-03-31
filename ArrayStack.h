@@ -14,26 +14,19 @@ private:
 
 public:
     void push(const T& value) {
-        if (ifFull(data)) {
-            return;
-        } else {
-            data.push_back(value);
-        }
+        data.push_back(value);
         // TODO
     }
 
     void pop() {
-        if (isEmpty(data)) {
-            cout << "Is Empty!" ;
-            return;
-        } else {
-            data.pop_back();
+        if (data.empty()) {
+            cout << "Is Empty!" << endl;
         }
         // TODO
     }
 
     T top() const {
-        if (isEmpty(data)) {
+        if (data.empty()) {
             cout << "Is Empty!" ;
             return T();
         }
@@ -42,11 +35,7 @@ public:
     }
 
     bool empty() const {
-        if (!isEmpty(data)) {
-            return false;
-        }
-        // TODO
-        return true;
+        return data.empty();
     }
 
     int size() const {
