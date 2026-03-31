@@ -34,3 +34,15 @@ Each entry may be one of the following:
 **Commit(s): **
 
 ---
+
+### Entry 2
+**Date:** 2026-03-30  
+**Entry Type:**  Engineering Decision  
+**Task worked on: precedence()**  
+**Issue or decision: was using an else if statement, decided to switch to two if statements**  
+**Error message / symptom (if applicable):**  
+**What I tried: had a else-if statement to dictate the output of precedence()**  
+**Fix / resolution (or final decision): decided to just make precedence() with two seperate if statemnts**  
+**Commit(s): **
+
+---

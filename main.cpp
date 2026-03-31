@@ -44,7 +44,7 @@ int precedence(const string& op) {
     if (op == "*" || op == "/") {
         return 1;
     }
-    else if (op == "+" || op == "-") {
+    if (op == "+" || op == "-") {
         return 2;
     }
     // TODO
@@ -72,6 +72,12 @@ bool isValidPostfix(const vector<Token>& tokens) {
 bool isValidInfix(const vector<Token>& tokens) {
     if (tokens.size() == 0) {
         return false;
+    }
+    for (int i = 0; i < tokens.size(); i++) {
+        bool isOperator = precedence(tokens[i].value) > 0;
+    }
+    if (isOperator) {
+
     }
 
     // TODO
