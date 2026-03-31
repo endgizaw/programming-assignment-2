@@ -46,3 +46,39 @@ Each entry may be one of the following:
 **Commit(s): **
 
 ---
+
+### Entry 3
+**Date:** 2026-03-31  
+**Entry Type: Engineering Decision**    
+**Task worked on: infixToPostfix()**  
+**Issue or decision: numbers were being placed in temp not the output**  
+**Error message / symptom (if applicable):**  
+**What I tried: was using a vector to hold temp, but was not ideal for pull specific items**  
+**Fix / resolution (or final decision): changed temp from vector to arraystack and corrected where numbers are held**  
+**Commit(s): **
+
+---
+
+### Entry 4
+**Date:** 2026-03-31  
+**Entry Type:**    
+**Task worked on: **  
+**Issue or decision: **  
+**Error message / symptom (if applicable):**  
+**What I tried: **  
+**Fix / resolution (or final decision): **  
+**Commit(s): **
+
+---
+
+### Entry 5
+**Date:** 2026-03-31  
+**Entry Type:**    
+**Task worked on: **  
+**Issue or decision: **  
+**Error message / symptom (if applicable):**  
+**What I tried: **  
+**Fix / resolution (or final decision): **  
+**Commit(s): **
+
+---

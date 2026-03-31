@@ -24,6 +24,8 @@ vector<Token> tokenize(const string& line) {
             if (!item.empty()) {
                 tokens.push_back(Token{"[" + item + "]"});
                 item = "";
+            } else {
+                item += c;
             }
         }
         if (!item.empty()) {
@@ -66,7 +68,7 @@ bool isValidPostfix(const vector<Token>& tokens) {
         }
     }
     // TODO
-    return count;
+    return true;
 }
 
 bool isValidInfix(const vector<Token>& tokens) {
@@ -74,16 +76,11 @@ bool isValidInfix(const vector<Token>& tokens) {
         return false;
     }
     for (int i = 0; i < tokens.size(); i++) {
-        if (precedence(tokens[i].value) > 0) {
-            if (i == 0 || i == tokens.size() - 1) {
-                return false;
-            }
-            if (precedence(tokens[i - 1].value) == 0) {
-                return false;
-            }
-            if (precedence(tokens[i + 1].value) == 0) {
-                return false;
-            }
+        if (isOperator(tokens[i].value)) {
+            return false;
+        }
+        if (!isOperator(tokens[i].value)) {
+            return false;
         }
     }
 
@@ -95,16 +92,17 @@ bool isValidInfix(const vector<Token>& tokens) {
 
 vector<Token> infixToPostfix(const vector<Token>& tokens) {
     vector<Token> output;
-    vector<Token> temp;
+    ArrayStack<Token> temp;
 
     for (int i = 0; i < tokens.size(); i++) {
-        if (precedence(tokens[i].value == 0)){
-            temp.push_back(tokens[i]);
+        if (precedence(tokens[i].value) == 0){
+            output.push_back(tokens[i]);
         } else {
-            while (temp.size() > 0) {
-                output.push_back(tokens[i]);
-                temp.pop_back();
+            while (!temp.empty() && precedence(temp.top().value) >= precedence(tokens[i].value)){
+                output.push_back(temp.top());
+                output.pop_back();
             }
+            temp.push(tokens[i]);
         }
     }
 
@@ -116,8 +114,36 @@ vector<Token> infixToPostfix(const vector<Token>& tokens) {
 
 double evalPostfix(const vector<Token>& tokens) {
     ArrayStack<double> stack;
+    for (int i = 0; i < tokens.size(); i++) {
+        if (precedence(tokens[i].value) == 0) {
+            stack.push(tokens[i].value);
+        }else {
+            double right = stack.top();
+            stack.pop();
+            double left = stack.top();
+            stack.pop();
+
+            if (tokens[i].value == "+") {
+                stack.push(left + right);
+            }
+            if (tokens[i].value == "-") {
+                stack.push(left - right);
+
+            }
+            if (tokens[i].value == "*") {
+                stack.push(left * right);
+            }
+            if (tokens[i].value == "/") {
+                if (right == 0) {
+                    return 0.0;
+                }
+                stack.push(left / right);
+
+            }
+        }
+    }
     // TODO
-    return 0.0;
+    return stack.top();
 }
 
 // Main
