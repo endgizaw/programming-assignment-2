@@ -61,12 +61,12 @@ Each entry may be one of the following:
 
 ### Entry 4
 **Date:** 2026-03-31  
-**Entry Type:**    
-**Task worked on: **  
-**Issue or decision: **  
-**Error message / symptom (if applicable):**  
-**What I tried: **  
-**Fix / resolution (or final decision): **  
+**Entry Type: Edge Case**    
+**Task worked on: evalPostfix() **  
+**Issue or decision: when dividing was not checking if dividen was 0**  
+**Error message / symptom (if applicable): would divide then check if dividen was 0**  
+**What I tried: x/y then if y == 0 return false**  
+**Fix / resolution (or final decision): put check before division**  
 **Commit(s): **
 
 ---
