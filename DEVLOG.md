@@ -97,7 +97,7 @@ Each entry may be one of the following:
 
 ### Entry 7
 **Date:** 2026-03-31  
-**Entry Type: Bug Fix**    
+**Entry Type: Edge Case**    
 **Task worked on: infixToPostfix()**  
 **Issue or decision: was not checking for any lost operators**  
 **Error message / symptom (if applicable): **  
@@ -115,6 +115,18 @@ Each entry may be one of the following:
 **Error message / symptom (if applicable): pop did not use pop_back/ top was not returning top**  
 **What I tried: set up frame for pop/top but was not completed**  
 **Fix / resolution (or final decision):  added pop_back to pop/ and changed return for top to data[data.size() - 1**  
+**Commit(s): **
+
+---
+
+### Entry 8
+**Date:** 2026-03-31  
+**Entry Type: Edge Case**    
+**Task worked on: tokenize()**  
+**Issue or decision: added final check !item.empty/ was not adding to tokens**  
+**Error message / symptom (if applicable): tokenize was not taking those in items and adding to tokens**  
+**What I tried: **  
+**Fix / resolution (or final decision):  added else statment to bring those in items to tokens and return correct amount**  
 **Commit(s): **
 
 ---
