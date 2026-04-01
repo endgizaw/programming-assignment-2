@@ -73,12 +73,48 @@ Each entry may be one of the following:
 
 ### Entry 5
 **Date:** 2026-03-31  
-**Entry Type:**    
-**Task worked on: **  
-**Issue or decision: **  
-**Error message / symptom (if applicable):**  
-**What I tried: **  
-**Fix / resolution (or final decision): **  
+**Entry Type: Bug Fix**    
+**Task worked on: isValidInfix()**  
+**Issue or decision: logic was not correct and was returning false for everything**  
+**Error message / symptom (if applicable): only returned false**  
+**What I tried: changed if condition to check for operators at each even and odd index**  
+**Fix / resolution (or final decision): updated if condition for better filtering**  
+**Commit(s): **
+
+---
+
+### Entry 6
+**Date:** 2026-03-31  
+**Entry Type: Bug Fix**    
+**Task worked on: makeDouble()**  
+**Issue or decision: I was trying to use tokens[i].value but was considered a string**  
+**Error message / symptom (if applicable): **  
+**What I tried: created makeDouble for conversion**  
+**Fix / resolution (or final decision): makeDouble works in converting**  
+**Commit(s): **
+
+---
+
+### Entry 7
+**Date:** 2026-03-31  
+**Entry Type: Bug Fix**    
+**Task worked on: infixToPostfix()**  
+**Issue or decision: was not checking for any lost operators**  
+**Error message / symptom (if applicable): **  
+**What I tried: was not looking for any operators that may have been left**  
+**Fix / resolution (or final decision):  added a while loop to check for lost operators**  
+**Commit(s): **
+
+---
+
+### Entry 7
+**Date:** 2026-03-31  
+**Entry Type: Bug Fix**    
+**Task worked on: ArrayStack.h**  
+**Issue or decision: pop/top were not completed**  
+**Error message / symptom (if applicable): pop did not use pop_back/ top was not returning top**  
+**What I tried: set up frame for pop/top but was not completed**  
+**Fix / resolution (or final decision):  added pop_back to pop/ and changed return for top to data[data.size() - 1**  
 **Commit(s): **
 
 ---

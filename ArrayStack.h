@@ -23,6 +23,7 @@ public:
             cout << "Is Empty!" << endl;
         }
         // TODO
+        data.pop_back();
     }
 
     T top() const {
@@ -31,7 +32,7 @@ public:
             return T();
         }
         // TODO
-        return T();
+        return data[data.size()-1];
     }
 
     bool empty() const {
@@ -42,6 +43,7 @@ public:
         // TODO
         return data.size();;
     }
+
 };
 
 #endif
